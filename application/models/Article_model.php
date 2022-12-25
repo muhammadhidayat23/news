@@ -73,7 +73,9 @@ class Article_model extends CI_Model
             [
                 'field' => 'title',
                 'label' => 'Title',
-                'rules' => 'required|max_length[128]'
+                'rules' => 'required|max_length[128]',
+                ['required' => 'Title harus diisi'],
+                ['max_length' => 'Title maksimal 128 karakter']
             ],
             [
                 'field' => 'draft',

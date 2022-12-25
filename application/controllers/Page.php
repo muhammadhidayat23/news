@@ -56,10 +56,14 @@ class Page extends CI_Controller
 			$this->load->model('feedback_model');
 
 			if ($this->input->method() === 'post') {
-				$this->load->model('feedback_model');
+				// $this->load->model('feedback_model');
+				// $rules = $this->feedback_model->rules();
+				// $this->form_validation->set_rules($rules);
 
-				$rules = $this->feedback_model->rules();
-				$this->form_validation->set_rules($rules);
+				$this->form_validation->set_rules('name', 'Name', 'required|max_length[32]', [
+					'required' => '%s tidak boleh kosong',
+					'max_length' => '%s tidak boleh lebih dari 32 karakter'
+				]);
 
 				if ($this->form_validation->run() == FALSE) {
 					return $this->load->view('contact', $data);

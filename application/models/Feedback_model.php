@@ -4,26 +4,30 @@ class Feedback_model extends CI_Model
 {
     private $_table = "feedback";
 
-    public function rules()
-    {
-        return [
-            [
-                'field' => 'name',
-                'label' => 'Name',
-                'rules' => 'required|max_length[32]'
-            ],
-            [
-                'field' => 'email',
-                'label' => 'Email',
-                'rules' => 'required|valid_email|max_length[32]'
-            ],
-            [
-                'field' => 'message',
-                'label' => 'Message',
-                'rules' => 'required'
-            ],
-        ];
-    }
+    // public function rules()
+    // {
+    //     return [
+    //         [
+    //             'field' => 'name',
+    //             'label' => 'Name',
+    //             'rules' => 'required|max_length[32]',
+    //             [
+    //                 'required' => 'You must provide a %s.',
+    //                 'max_length' => '%s should be less than 32 characters.'
+    //             ]
+    //         ],
+    //         [
+    //             'field' => 'email',
+    //             'label' => 'Email',
+    //             'rules' => 'required|valid_email|max_length[32]'
+    //         ],
+    //         [
+    //             'field' => 'message',
+    //             'label' => 'Message',
+    //             'rules' => 'required'
+    //         ],
+    //     ];
+    // }
 
     public function insert($feedback)
     {

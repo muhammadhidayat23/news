@@ -9,11 +9,10 @@
     <main class="main">
         <div class="content">
             <h1>Write new Article</h1>
-
             <form action="" method="POST">
                 <div class="mb-3">
-                    <label class="form-label">Judul</label>
-                    <input type="text" name="title" class="form-control <?= form_error('title') ? 'invalid' : '' ?>" placeholder="Judul artikel" value="<?= set_value('title') ?>" required maxlength="128" />
+                    <label for="title">Title*</label>
+                    <input type="text" name="title" class="<?= form_error('title') ? 'invalid' : '' ?>" placeholder="Judul artikel" value="<?= set_value('title') ?>" />
                     <div class="invalid-feedback">
                         <?= form_error('title') ?>
                     </div>
